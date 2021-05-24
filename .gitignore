@@ -1,6 +1,6 @@
-.vuepress/dist
 node_modules/
 .vscode/
 .DS_Store
-package-lock.json
-yarn*
+.vuepress/dist
+.vuepress/.temp
+.vuepress/.cache

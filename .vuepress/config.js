@@ -1,180 +1,140 @@
-const {
-    description
-} = require('../package')
-
 module.exports = {
     title: 'OpenCore Multiboot',
+    lang: 'it-IT',
     head: [
-        ['meta', {
-            name: 'theme-color',
-            content: '#3eaf7c'
-        }],
-        ['meta', {
-            name: 'apple-mobile-web-app-capable',
-            content: 'yes'
-        }],
-        ['meta', {
-            name: 'apple-mobile-web-app-status-bar-style',
-            content: 'black'
-        }],
-        ["link", {
-            rel: "'stylesheet",
-            href: "/styles/website.css"
-        },]
+        [
+            'meta', {
+                name: 'theme-color',
+                content: '#3eaf7c'
+            }
+        ],
+        [
+            'meta', {
+                name: 'apple-mobile-web-app-capable',
+                content: 'yes'
+            }
+        ],
+        [
+            'meta', {
+                name: 'apple-mobile-web-app-status-bar-style',
+                content: 'black'
+            }
+        ],
+        [
+            "link", {
+                rel: "'stylesheet",
+                href: "/styles/website.css"
+            },
+        ]
     ],
+
+    extendMarkdown: md => {
+        md.use(require('markdown-it-multimd-table'), {
+            rowspan: true,
+        });
+    },
+
     base: '/OpenCore-Multiboot/',
 
-	markdown: {
-		extendMarkdown: md => {
-			md.use(require('markdown-it-multimd-table'), {
-				rowspan: true,
-			});
-		}
-	},
-    theme: 'vuepress-theme-succinct',
-    globalUIComponents: [
-        'ThemeManager'
-    ],
-
     themeConfig: {
-        lastUpdated: true,
-        repo: 'https://github.com/dortania/OpenCore-Multiboot',
-		editLinks: true,
-		editLinkText: 'Help us improve this page!',
+        lastUpdated: 'Ultimo Aggiornamento',
+        repo: 'macos86/OpenCore-Multiboot',
+        editLinks: true,
+        smoothScroll: true,
+        editLinkText: 'Help us improve this page!',
         logo: 'homepage.png',
         nav: [{
-            text: 'Dortania Guides',
+            text: 'Guide',
             ariaLabel: 'Language Menu',
             items: [{
-                text: 'Home Site',
+                text: 'Dortania',
                 link: 'https://dortania.github.io/'
             },
             {
                 text: 'OpenCore Install Guide',
-                link: 'https://dortania.github.io/OpenCore-Install-Guide/'
+                link: 'https://macos86.github.io/'
             },
             {
-                text: 'OpenCore Post-Install',
+                text: 'OpenCore Post-Install (EN)',
                 link: 'https://dortania.github.io/OpenCore-Post-Install/'
             },
             {
-                text: 'Wireless Buyers Guide',
+                text: 'Wireless Buyers Guide (EN)',
                 link: 'https://dortania.github.io/Wireless-Buyers-Guide/'
             },
             {
-                text: 'GPU Buyers Guide',
+                text: 'GPU Buyers Guide (EN)',
                 link: 'https://dortania.github.io/GPU-Buyers-Guide/'
             },
             {
-                text: 'Anti Buyers Guide',
+                text: 'Anti Buyers Guide (EN)',
                 link: 'https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/'
             }
             ]
         },
-            /*
-              {
-                text: 'Github',
-                link: 'https://github.com/dortania/OpenCore-Install-Guide'
-              }
-            */
         ],
-        sidebar: [{
-	            title: 'Multiboot with OpenCore',
-                collapsable: false,
-                sidebarDepth: 0,
-                children: [
-                    '',
-                ]
-	        },
-		{
-            title: 'For experienced users who already dealt with multibooting',
-            collapsable: false,
-            sidebarDepth: 1,
-            children: [
-                ['QUICK', 'Quick! I know what do, just tell me already HOW'],
-            ]
-
-        },
-		{
-            title: 'Introduction to multi-booting',
-            collapsable: false,
-            sidebarDepth: 1,
-            children: [
-                ['/Intro/Def', 'What is it?'],
-				['/Intro/Booting-part', 'UEFI? Legacy? CSM? What?'],
-            ]
-
-        },
-		{
-            title: 'UEFI Multibooting',
-            collapsable: false,
-            sidebarDepth: 1,
-            children: [
-                ['/empty/', 'Empty Disk(s)'],
-				{
-            	collapsable: false,
-            	sidebarDepth: 1,
-	            children: [
-	                ['/empty/samedisk', 'One disk - multiple OSes'],
-					['/empty/diffdisk', 'Multiple disks - multiple OSes'],
-	            ]
-				},
-				['/exist/', 'Existing Filled Disk(s)'],
-				{
-            	collapsable: false,
-            	sidebarDepth: 1,
-	            children: [
-	                ['/exist/data', 'On a filled non-OS related disk (Data disk)'],
-					['/exist/os', 'On a filled OS related disk (Windows/Linux)'],
-	            ]
-				},
-            ]
-
-        },
-        {
-            title: 'Troubleshooting',
-            collapsable: false,
-            sidebarDepth: 1,
-            children: [
-                ['troubleshooting', 'Troubleshooting'],
-            ]
-
-        },
-		{
-            title: 'OpenCore configuration',
-            collapsable: false,
-            sidebarDepth: 1,
-            children: [
-				['/oc/linux', 'For Linux booting'],
-				['/oc/duet', 'Installing OpenCore on a legacy system'],
-				['https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html', 'Using LauncherOption'],
-				['https://dortania.github.io/OpenCore-Post-Install/multiboot/bootcamp.html', 'BootCamp installation'],
-            ]
-
-        },
-		{
-            title: 'Windows 10 manual and automatic Installation',
-            collapsable: false,
-            sidebarDepth: 1,
-            children: [
-				['Win', 'Windows 10 manual and automatic Installation'],
-            ]
-
-        },
-    	],
-    },
-    /**
-     * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-     */
-    plugins: [
-        '@vuepress/plugin-back-to-top',
-        'vuepress-plugin-smooth-scroll',
-        ['vuepress-plugin-medium-zoom',
+        sidebar: [
             {
-                selector: "img",
-                options: {
-                    background: 'var(--bodyBgColor)'
-                }
-            }],
+                title: 'Per chi ha già esperienza con i multiboot',
+                path: 'QUICK'
+            },
+            {
+                title: 'Introduzione al multibooting',
+                collapsable: false,
+                sidebarDepth: 1,
+                children: [
+                    ['/Intro/Def', 'Che cos\'è?'],
+                    ['/Intro/Booting-part', 'UEFI? Legacy? CSM? Che!?'],
+                ]
+            },
+            {
+                title: 'Multiboot su UEFI',
+                collapsable: false,
+                sidebarDepth: 1,
+                children: [
+                    ['/empty/', 'Dischi vuoti'],
+                    {
+                        collapsable: false,
+                        sidebarDepth: 1,
+                        children: [
+                            ['/empty/samedisk', 'Un disco - molti sistemi'],
+                            ['/empty/diffdisk', 'Differenti dischi - molti sistemi'],
+                        ]
+                    },
+                    ['/exist/', 'Dischi già occupati'],
+                    {
+                        collapsable: false,
+                        sidebarDepth: 1,
+                        children: [
+                            ['/exist/data', 'Su dischi con dati non relativi ai sistemi operativi (dati)'],
+                            ['/exist/os', 'Su dischi con sistemi già presenti (Windows/Linux)'],
+                        ]
+                    },
+                ]
+            },
+            {
+                title: 'Risoluzione dei problemi',
+                path: 'Troubleshooting'
+            },
+            {
+                title: 'Configurazioni di OpenCore',
+                collapsable: false,
+                sidebarDepth: 1,
+                children: [
+                    ['/oc/linux', 'Per avviare Linux'],
+                    ['/oc/duet', 'Per installare su sistemi non UEFI'],
+                    ['https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html', 'Usare LauncherOption'],
+                    ['https://dortania.github.io/OpenCore-Post-Install/multiboot/bootcamp.html', 'Installare BootCamp'],
+                ]
+            },
+            {
+                title: 'Installazione manuale e automatica di Windows (10)',
+                path: 'win'
+            }
+        ]
+    },
+    plugins: [
+        '@vuepress/back-to-top',
+        '@vuepress/medium-zoom'
     ]
 }
