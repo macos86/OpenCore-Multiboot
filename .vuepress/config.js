@@ -114,7 +114,7 @@ module.exports = {
             },
             {
                 title: 'Risoluzione dei problemi',
-                path: 'Troubleshooting'
+                path: 'troubleshooting'
             },
             {
                 title: 'Configurazioni di OpenCore',
@@ -129,7 +129,7 @@ module.exports = {
             },
             {
                 title: 'Installazione manuale e automatica di Windows (10)',
-                path: 'win'
+                path: 'Win'
             }
         ]
     },
