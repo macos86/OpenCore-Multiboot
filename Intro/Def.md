@@ -19,4 +19,6 @@ Now that you made the difference, there are thing you need to know about dualboo
 
 But before starting any of this
 
-# PLEASE BACKUP YOUR DATA
+::: danger PLEASE BACKUP YOUR DATA
+And don't say I didn't say it!
+:::

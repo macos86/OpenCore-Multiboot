@@ -4,7 +4,7 @@
 
 ## Method A: Chainloading a EFI Bootloader (GRUB2, Systemd-boot)
 
-#### Method 1: Using BlessOverride
+### Method 1: Using BlessOverride
 
 If Linux is not picked up automagically, add the following to your config.plist:
 
@@ -21,7 +21,7 @@ Some common Linux bootloader paths:
 
 ![](../images/linux-md/blessoverride.png)
 
-#### Method 2: Using `efibootmgr` (recommended)
+### Method 2: Using `efibootmgr` (recommended)
 
 `efibootmgr` is a program that manipulates the EFI Boot Manager in your UEFI Firmware (ex-BIOS). With it, you can create new entries and add your linux boot manager (GRUB2, systemd-boot,...) in a way that will make it appear on OpenCore and can be selected and set as default too by OC (using Ctrl + Enter when you highlight it). To do that:
 
