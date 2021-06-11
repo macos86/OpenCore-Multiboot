@@ -23,7 +23,7 @@ Note: we do not speak of the MBR patch, that's a bad idea and really should not 
 
 ## Checking your disk partitioning scheme
 
-#### In Windows
+### In Windows
 
 - Open Disk Manager
 - Right click on the destination drive > *Properties*
@@ -36,7 +36,7 @@ Note: we do not speak of the MBR patch, that's a bad idea and really should not 
 
     ![image-20200825010434237](../images/ex-data/gpt_disk.png)
 
-#### In Linux
+### In Linux
 
 - Download and install `gdisk` if it's not already installed
 
@@ -64,7 +64,7 @@ Note: we do not speak of the MBR patch, that's a bad idea and really should not 
       GPT: present
     ```
 
-#### In macOS
+### In macOS
 
 - Run `diskutil list`
 
@@ -88,13 +88,13 @@ Note: we do not speak of the MBR patch, that's a bad idea and really should not 
 
 **Note**: if your drive is **already GPT**, then **skip this section**.
 
-#### Destructive Conversion
+### Destructive Conversion
 
 This method will destroy all your data on your disk, making you a clean slate to work with. **Only use this if the data in the disk is not important or backed up already! YOUR DATA WILL BE GONE WITH THIS METHOD.**
 
 You can use any partitioning tool of your choice and destroy the data, OR you can just boot macOS installer that you made with the OpenCore Dortania Guide and select the disk and format it. You can check [Dualbooting on the same disk](../empty/samedisk.md) section for more information. You're not required to follow the rest of this section.
 
-#### Non-Destructive Conversion
+### Non-Destructive Conversion
 
 This method has higher chances of keeping your data intact, **however this does NOT mean you can ignore backing up your data. BACKUP YOUR DATA!**
 
@@ -134,7 +134,7 @@ We will be using `gdisk` ran on any linux distribution, I strongly NOT recommend
 
 For those who want to other way around (from GPT to MBR) follow this [answer](https://superuser.com/questions/1250895/converting-between-gpt-and-mbr-hard-drive-without-losing-data).
 
-#### Verification
+### Verification
 
 Once your drive is converted, check again following the instruction above. You may want to reboot your computer before verifying.
 

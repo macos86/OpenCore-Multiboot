@@ -1,4 +1,6 @@
-# UEFI Systems
+# Boot Explaination
+
+## UEFI Systems
 
 Ever since UEFI, the disk default partition map format is GPT (GUID Partition Table), which added support for more than 2TB of disk size and more than 4 partitions that was the limit of MBR while still keeping a backward compatibility with MBR for legacy systems. If your computer (prebuilt) came with Windows 8 (2012 and later), then your disk is probably partitioned as GPT.
 
@@ -13,7 +15,7 @@ Usually, 2012+ computers that came with Windows 8 would have a UEFI firmware (so
 
 Usually, the said "bootloader" is contained somewhere in the disk, and that somewhere is called a **EFI Partition**. You can find this named different things like ESP (EFI System Partition), SYSTEM, EFI, BOOT and so on. This partition is **FAT32** formatted and flagged as **EF00** in MBR or **C12A7328-F81F-11D2-BA4B-00A0C93EC93B** GUID in GPT. This partition contains usually the EFI applications (like an OS bootloader) in it that are loaded at boot by the UEFI firmware (remember this as it is important for later for recovery).
 
-# Legacy/CSM Systems
+## Legacy/CSM Systems
 
 Contrary to UEFI, Legacy systems are older and much more mature (dating back to the first IBM PCs). They're certainly a lot more limited and slower than UEFI on the same system but hold better compatibility with a lot of OSes (even macOS in some rare cases). Computer pre-2012 usually have this type of firmware (some exceptions like servers and some professional laptops and so on that can also have UEFI, they're not reliable thought in that mode). The computer would usually come with a version of Windows that is older than Windows 8 with a hard drive that is less than 2TB. Some desktop users at this time would also install OSes in Legacy mode even if their motherboard supports the newer UEFI standard. This could create issues with multibooting later on.
 
@@ -26,7 +28,7 @@ These systems rely on another method of loading the bootloader. This piece of so
 - Bootloader appears
   - The OS will boot now.
 
-# Major differences between the systems
+## Major differences between the systems
 
 We'll put them in a table to show the main differences:
 
@@ -43,9 +45,9 @@ We'll put them in a table to show the main differences:
 
 Aside from Legacy hardware support (which is rare anyways nowadays), UEFI is the firmware to use when dual booting on newer hardware (2012+). But for legacy users, there is also a way to get some UEFI features but only through DUET (will be later discussed).
 
-# Detecting which firmware you're using
+## Detecting which firmware you're using
 
-## No OS
+### No OS
 
 If your computer:
 
@@ -56,7 +58,7 @@ Then it probably has **UEFI system**, that said, it doesn't mean older generatio
 
 Any older than the above and the chances of having a proper UEFI implementation diminishes and you're better off with a Legacy booting.
 
-## On Windows
+### On Windows
 
 Open Run (Win + R) and type `msinfo32`, you will be greeted with this window:
 
@@ -64,9 +66,9 @@ Open Run (Win + R) and type `msinfo32`, you will be greeted with this window:
 
 Check **BIOS Mode**, it will either say **UEFI** or **Legacy**. Note that this is for Windows 8/10, if you're using Windows 7 or older, you're probably running it in Legacy mode.
 
-## On Linux
+### On Linux
 
-### Method 1
+#### Method 1
 
 On most Linux distributions, you can run
 
@@ -76,7 +78,7 @@ On most Linux distributions, you can run
 
 If the folder exists, then you're running in UEFI mode. (screenshot credit: Scooby-Chan#7971)
 
-### Method 2
+#### Method 2
 
 You can also download and run `efibootmgr` (available on most distributions) and you will either:
 
@@ -87,7 +89,7 @@ You can also download and run `efibootmgr` (available on most distributions) and
 
 ---
 
-# macOS in all of this
+## macOS in all of this
 
 macOS requires some special treatment because Apple wants to (pampering their OS), and thus requires a set of rules to get it installed on any drive:
 
