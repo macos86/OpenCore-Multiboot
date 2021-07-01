@@ -57,7 +57,7 @@ Misc -> BlessOverride -> \EFI\Microsoft\Boot\bootmgfw.efi
 
 * **Note**: As of OpenCore 0.5.9, this no longer needs to be specified. OpenCore should pick up on this entry automatically
 
-![](/images/troubleshooting/blessoverride.png)
+![](./images/troubleshooting/blessoverride.png)
 
 #### Solution 3: Boot to recovery mode from within Windows
 

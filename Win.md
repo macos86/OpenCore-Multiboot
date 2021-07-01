@@ -45,17 +45,17 @@ Open rufus, connect the usb and setup rufus with the appropriate settings for yo
 
 #### UEFI
 
-![UEFI](/images/win-md/rufus.png)
+![UEFI](./images/win-md/rufus.png)
 
 #### BIOS/legacy/CSM
 
-![BIOS/legacy/CSM](/images/win-md/rufusL.png)
+![BIOS/legacy/CSM](./images/win-md/rufusL.png)
 
 Wait until it finishes flashing, then boot on the USB.
 
 ## Installing Windows 10
 
-![The usb booted up](/images/win-md/esd-iso.png)
+![The usb booted up](./images/win-md/esd-iso.png)
 
 When the usb booted, you can chose what to do:
 
@@ -66,7 +66,7 @@ When the usb booted, you can chose what to do:
 
 Follow the procedure printed on screen!
 
-![Installation image](/images/win-md/installation.png)
+![Installation image](./images/win-md/installation.png)
 
 ### Manually
 
@@ -87,13 +87,13 @@ NOTE: This process can be followed only on blank disks.
 
 Follow the procedure since appears this section:
 
-![Custom installation](/images/win-md/custom.png)
+![Custom installation](./images/win-md/custom.png)
 
 Select "Custom", remove all partitions and finally click on "Create". Windows will ask you a confirm, then you did it!
 
 ##### Manually partitions
 
-![Windows UEFI partitions](/images/win-md/part.png)
+![Windows UEFI partitions](./images/win-md/part.png)
 
 You can customize the commands (SHIFT+F10 to open Command Prompt) to your disk layout. If you felt more confortful, you could create all your partition (specify the size) on the diskmanagement screen (see [automatically](#Automatically-partitions)) and then installing manually (only blank disks).
 
@@ -133,7 +133,7 @@ Reboot and hope everything work.
 
 #### Manually MBR partitions
 
-![Legacy Partitions](/images/win-md/partL.png)
+![Legacy Partitions](./images/win-md/partL.png)
 
 Type `diskpart`
 
