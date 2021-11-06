@@ -95,6 +95,10 @@ Select "Custom", remove all partitions and finally click on "Create". Windows wi
 
 ![Windows UEFI partitions](./images/win-md/part.png)
 
+::: tip Note
+We won't use MSR because it sucks.
+:::
+
 You can customize the commands (SHIFT+F10 to open Command Prompt) to your disk layout. If you felt more confortful, you could create all your partition (specify the size) on the diskmanagement screen (see [automatically](#Automatically-partitions)) and then installing manually (only blank disks).
 
 Type `diskpart`
@@ -109,9 +113,7 @@ Type `convert gpt` to convert the disk to GPT (it would give an error if it was 
 
 Type `create part efi size 200` to create the EFI partition (default size 200 MB), then type `format quick fs fat32` to format it and `assign letter q` to assign correctly our EFI partition.
 
-Type `create part msr size 128` to create the MSR partition (default size 128 MB, shouldn't be changed; used by some strange Windows things).
-
-Type `create part primary size 128000` to create the main partition (default size = [total space] - 450MB of WinRE - 128MB of MSR - 200MB of EFI. I remember that the size value must be in MB) --> default size = [total space] - 778MB, then type `format quick` to format it and `assign letter c` to assign correctly our drive.
+Type `create part primary size 128000` to create the main partition (default size = [total space] - 450MB of WinRE - 200MB of EFI. I remember that the size value must be in MB) --> default size = [total space] - 778MB, then type `format quick` to format it and `assign letter c` to assign correctly our drive.
 
 After that we set up the recovery enviroment: type `create part primary` (default size 450, the remaining part of the disk), `set id de94bba4-06d1-4d40-a16a-bfd50179d6ac` to change the type of partition (primary-->WINRE, more infos [here](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs)),`gpt attributes 0x8000000000000001` to hide it,`format quick` to format it in NTFS.
 
