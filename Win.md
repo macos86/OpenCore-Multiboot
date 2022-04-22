@@ -96,7 +96,7 @@ Select "Custom", remove all partitions and finally click on "Create". Windows wi
 ![Windows UEFI partitions](./images/win-md/part.png)
 
 ::: tip Note
-We won't use MSR because it sucks.
+We won't use MSR because we don't need it. If you want you can also skip recovery partition, which is long and it might not be useful
 :::
 
 You can customize the commands (SHIFT+F10 to open Command Prompt) to your disk layout. If you felt more confortful, you could create all your partition (specify the size) on the diskmanagement screen (see [automatically](#Automatically-partitions)) and then installing manually (only blank disks).
