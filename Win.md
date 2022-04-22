@@ -1,6 +1,6 @@
 # Installation of Windows 10
 
-**Work in Progess**, you can help contibute via [PRs](https://github.com/dortania/OpenCore-Multiboot/pulls). This guide referes to Windows 10, however it's still valid for Windows 8/8.1. (for Windows 7 or older, follow the legacy section (duetpkg configurations only))
+This guide referes to Windows 10, however it's still valid for Windows 8.1 and also 11!
 
 ## Downloading and flashing Windows 10
 
